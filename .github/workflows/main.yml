@@ -1,1 +1,20 @@
 
+name: cicd
+
+on:
+  push:
+    branches: 
+    - lia
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install
+        run: npm i
+
+      - name: Run test
+        run: npm test
