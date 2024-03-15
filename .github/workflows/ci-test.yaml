@@ -2,7 +2,7 @@ name: Test CI
 on: 
   push:
     branches:
-      - kha-test-ci
+      - kha-pham
 jobs: 
     npm-run-test: 
         runs-on: ubuntu-latest
