@@ -2,7 +2,7 @@ on:
   push:
     branches: [long_tran_dss]
 
-name: Automatically generate openapi file to readme service
+name: Test CICD
 jobs:
   build:
     runs-on: ubuntu-latest
