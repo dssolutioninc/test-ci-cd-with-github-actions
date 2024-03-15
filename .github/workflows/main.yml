@@ -17,24 +17,6 @@ jobs:
       
       # ESLint and Prettier must be in `package.json`
       - name: Install Node.js dependencies
-        run: yarn install
+        run: yarn install && yarn run test
 
-      - name: Slack Notification Successfully
-        uses: rtCamp/action-slack-notify@v2.2.0
-        if: success()
-        env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_MESSAGE: 'CI successfully'
-          SLACK_ICON: https://avatars.slack-edge.com/2023-01-11/4624919300338_3f0a6cd09ab0cfb74786_48.png
-          SLACK_USERNAME: Github Actions
-          SLACK_COLOR: ${{ job.status }}
-      
-      - name: Slack Notification Failurely
-        uses: rtCamp/action-slack-notify@v2.2.0
-        if: failure()
-        env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_MESSAGE: 'CI failurely'
-          SLACK_ICON: https://avatars.slack-edge.com/2023-01-11/4624919300338_3f0a6cd09ab0cfb74786_48.png
-          SLACK_USERNAME: Github Actions
-          SLACK_COLOR: ${{ job.status }}
+  
