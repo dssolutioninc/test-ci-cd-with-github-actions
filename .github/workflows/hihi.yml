@@ -1,0 +1,20 @@
+name: tuan_le_workflow
+
+on:
+  push:
+    branches:
+      - tuan_le
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout ne
+        uses: actions/checkout@v2
+
+      - name: Install ne
+        run: npm install
+
+      - name: Run tests ne
+        run: npm run test
